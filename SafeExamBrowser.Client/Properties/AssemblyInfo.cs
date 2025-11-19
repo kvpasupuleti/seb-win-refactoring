@@ -6,11 +6,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SafeExamBrowser.Client")]
-[assembly: AssemblyDescription("Safe Exam Browser")]
-[assembly: AssemblyCompany("ETH Zürich")]
-[assembly: AssemblyProduct("SafeExamBrowser.Client")]
-[assembly: AssemblyCopyright("Copyright © 2025 ETH Zürich, IT Services")]
+[assembly: AssemblyTitle("Topin Secure Browser Client")]
+[assembly: AssemblyDescription("Topin Secure Browser - Secure Assessment Platform")]
+[assembly: AssemblyCompany("Topin Tech")]
+[assembly: AssemblyProduct("Topin Secure Browser")]
+[assembly: AssemblyCopyright("Copyright © 2025 Topin Tech")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
