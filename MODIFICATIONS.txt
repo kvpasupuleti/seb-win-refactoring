@@ -1,0 +1,135 @@
+============================================================
+TOPIN SECURE BROWSER - MODIFICATIONS TO SAFE EXAM BROWSER
+============================================================
+
+This file lists modifications made to Safe Exam Browser 
+source code as required by the Mozilla Public License v2.0.
+
+Original Work: Safe Exam Browser
+Copyright: (c) 2010-2025 ETH Zürich, IT Services
+License: Mozilla Public License 2.0
+
+Modifications: Topin Secure Browser
+Copyright: (c) 2025 Topin Tech
+License: Mozilla Public License 2.0 (for modified files)
+
+============================================================
+MODIFIED FILES
+============================================================
+
+The following Safe Exam Browser source files have been 
+modified for Topin Secure Browser:
+
+## Configuration & Core
+-----------------------------------------------------------
+1. SafeExamBrowser.Configuration.Contracts/AppConfig.cs
+   - Changed: Communication pipe base address
+   - Changed: Mutex names for process synchronization
+   - Changed: Event names
+
+2. SafeExamBrowser.Configuration/ConfigurationData/DataValues.cs
+   - Changed: Application data folder names
+   - Changed: Service event names
+
+3. SafeExamBrowser.Runtime/CompositionRoot.cs
+   - Changed: Log header text and branding
+   - Changed: Website URL in logs
+
+4. SafeExamBrowser.Service/CompositionRoot.cs
+   - Changed: Application data folder paths
+
+## Assembly Information
+-----------------------------------------------------------
+5. SafeExamBrowser.Runtime/Properties/AssemblyInfo.cs
+   - Changed: Assembly title, description, company
+   - Changed: Product name and copyright
+
+6. SafeExamBrowser.Client/Properties/AssemblyInfo.cs
+   - Changed: Assembly title, description, company
+   - Changed: Product name and copyright
+
+## Localization Resources
+-----------------------------------------------------------
+7. SafeExamBrowser.I18n/Data/en.xml
+   - Changed: User-facing text strings
+   - Changed: Application name references (SEB → TSB)
+   - Changed: Product branding throughout
+
+## Build Configuration
+-----------------------------------------------------------
+8. TopinSecureBrowser.Launcher/TopinSecureBrowser.Launcher.csproj
+   - Changed: Post-build events for file deployment
+   - Changed: Project references
+
+============================================================
+NEW FILES (NOT DERIVED FROM SAFE EXAM BROWSER)
+============================================================
+
+The following files are original works by Topin Tech and are 
+not modifications of Safe Exam Browser files:
+
+1. TopinSecureBrowser.Launcher/Program.cs
+   - Original launcher implementation
+   - Copyright (c) 2025 Topin Tech
+
+2. TopinSecureBrowser.Launcher/CopyDependencies.bat
+   - Build automation script
+   - Copyright (c) 2025 Topin Tech
+
+3. TopinSecureBrowser.Launcher/TopinSecureBrowser.ico
+   - Topin Tech branding assets
+   - Copyright (c) 2025 Topin Tech
+
+============================================================
+NATURE OF MODIFICATIONS
+============================================================
+
+All modifications were made for the purpose of:
+
+1. Rebranding the application from "Safe Exam Browser" to 
+   "Topin Secure Browser"
+
+2. Updating copyright and company information to reflect 
+   Topin Tech ownership
+
+3. Changing internal identifiers (process names, pipe names, 
+   folder paths) to avoid conflicts
+
+4. Updating user-facing text and localization strings
+
+No modifications were made to:
+- Core security functionality
+- Kiosk mode implementation
+- Browser engine integration
+- Configuration encryption
+- Network communication protocols
+
+============================================================
+COMPLIANCE WITH MPL 2.0
+============================================================
+
+In accordance with MPL 2.0 requirements:
+
+✓ All modified files retain their original MPL 2.0 license
+✓ Original copyright notices have been preserved
+✓ This notice documents all modifications made
+✓ Source code for modified files is available (see LICENSE.txt)
+✓ Modified files are clearly marked with modification notices
+
+============================================================
+SOURCE CODE AVAILABILITY
+============================================================
+
+The source code for all modified MPL-licensed files is 
+available on request: support@topin.tech
+
+============================================================
+LAST UPDATED
+============================================================
+
+This modifications list was last updated: 2025-11-19
+
+For the most current list of modifications, please contact Topin Tech.
+
+============================================================
+

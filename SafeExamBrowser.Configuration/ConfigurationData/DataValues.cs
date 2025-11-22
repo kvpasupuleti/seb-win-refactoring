@@ -42,9 +42,9 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			var programCopyright = executable.GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright;
 			var programTitle = executable.GetCustomAttribute<AssemblyTitleAttribute>().Title;
 			var programVersion = executable.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
-			var appDataLocalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), nameof(SafeExamBrowser));
-			var appDataRoamingFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), nameof(SafeExamBrowser));
-			var programDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), nameof(SafeExamBrowser));
+		var appDataLocalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TopinSecureBrowser");
+		var appDataRoamingFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TopinSecureBrowser");
+		var programDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "TopinSecureBrowser");
 			var temporaryFolder = Path.Combine(appDataLocalFolder, "Temp");
 			var startTime = DateTime.Now;
 			var logFolder = Path.Combine(appDataLocalFolder, "Logs");
@@ -73,7 +73,7 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			appConfig.SebUriScheme = "seb";
 			appConfig.SebUriSchemeSecure = "sebs";
 			appConfig.ServiceAddress = $"{AppConfig.BASE_ADDRESS}/service";
-			appConfig.ServiceEventName = $@"Global\{nameof(SafeExamBrowser)}-{Guid.NewGuid()}";
+			appConfig.ServiceEventName = $@"Global\TopinSecureBrowser-{Guid.NewGuid()}";
 			appConfig.ServiceLogFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Service.log");
 			appConfig.SessionCacheFilePath = Path.Combine(temporaryFolder, "cache.bin");
 			appConfig.TemporaryDirectory = temporaryFolder;
@@ -87,7 +87,7 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 
 			appConfig.ClientId = Guid.NewGuid();
 			appConfig.ClientAddress = $"{AppConfig.BASE_ADDRESS}/client/{Guid.NewGuid()}";
-			appConfig.ServiceEventName = $@"Global\{nameof(SafeExamBrowser)}-{Guid.NewGuid()}";
+			appConfig.ServiceEventName = $@"Global\TopinSecureBrowser-{Guid.NewGuid()}";
 
 			configuration.AppConfig = appConfig.Clone();
 			configuration.ClientAuthenticationToken = Guid.NewGuid();

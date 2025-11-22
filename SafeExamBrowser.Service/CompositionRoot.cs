@@ -70,13 +70,13 @@ namespace SafeExamBrowser.Service
 			ServiceController = new ServiceController(logger, LogWriterFactory, bootstrapSequence, sessionSequence, serviceHost, sessionContext, systemConfigurationUpdate);
 		}
 
-		private string BuildBackupFilePath()
-		{
-			var appDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), nameof(SafeExamBrowser));
-			var filePath = Path.Combine(appDataFolder, AppConfig.BACKUP_FILE_NAME);
+	private string BuildBackupFilePath()
+	{
+		var appDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TopinSecureBrowser");
+		var filePath = Path.Combine(appDataFolder, AppConfig.BACKUP_FILE_NAME);
 
-			return filePath;
-		}
+		return filePath;
+	}
 
 		internal void LogStartupInformation()
 		{
@@ -89,19 +89,19 @@ namespace SafeExamBrowser.Service
 			logger?.Log($"# Service terminated at {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}");
 		}
 
-		private void InitializeLogging()
-		{
-			var appDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), nameof(SafeExamBrowser));
-			var logFolder = Path.Combine(appDataFolder, "Logs");
-			var logFilePrefix = DateTime.Now.ToString("yyyy-MM-dd\\_HH\\hmm\\mss\\s");
-			var logFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Service.log");
-			var logFileWriter = new LogFileWriter(new DefaultLogFormatter(), logFilePath);
+	private void InitializeLogging()
+	{
+		var appDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TopinSecureBrowser");
+		var logFolder = Path.Combine(appDataFolder, "Logs");
+		var logFilePrefix = DateTime.Now.ToString("yyyy-MM-dd\\_HH\\hmm\\mss\\s");
+		var logFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Service.log");
+		var logFileWriter = new LogFileWriter(new DefaultLogFormatter(), logFilePath);
 
-			logger = new Logger();
-			logger.LogLevel = LogLevel.Debug;
-			logger.Subscribe(logFileWriter);
-			logFileWriter.Initialize();
-		}
+		logger = new Logger();
+		logger.LogLevel = LogLevel.Debug;
+		logger.Subscribe(logFileWriter);
+		logFileWriter.Initialize();
+	}
 
 		private ILogObserver LogWriterFactory(string filePath)
 		{

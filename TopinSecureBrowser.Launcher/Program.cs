@@ -49,7 +49,7 @@ namespace TopinSecureBrowser.Launcher
                 {
                     FileName = sebExecutable,
                     Arguments = sebArgs,
-                    UseShellExecute = false,
+                    UseShellExecute = true,
                     WorkingDirectory = launcherDir
                 };
 

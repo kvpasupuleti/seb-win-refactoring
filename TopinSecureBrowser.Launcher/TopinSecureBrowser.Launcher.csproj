@@ -63,9 +63,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CopyDependencies.bat" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TopinSecureBrowser.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SafeExamBrowser.Runtime\SafeExamBrowser.Runtime.csproj">
+      <Project>{e3aed2f8-b5df-45d1-ac19-48066923d6d8}</Project>
+      <Name>SafeExamBrowser.Runtime</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SafeExamBrowser.Client\SafeExamBrowser.Client.csproj">
+      <Project>{7cc5a895-e0d3-4e43-9b39-ccec05a5a6a7}</Project>
+      <Name>SafeExamBrowser.Client</Name>
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(ProjectDir)CopyDependencies.bat" "$(SolutionDir)SafeExamBrowser.Runtime\bin\$(Platform)\$(Configuration)" "$(SolutionDir)SafeExamBrowser.Client\bin\$(Platform)\$(Configuration)" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
