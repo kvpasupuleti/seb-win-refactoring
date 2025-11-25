@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Name="Safe Exam Browser ($(var.Platform))" Manufacturer="ETH Zürich" Language="1033" Codepage="1252"
-             Id="*" Version="!(bind.fileVersion.MainExecutable)" UpgradeCode="97A8B13E-48FB-4BE1-A7C2-DD1863F95CCB">
+    <Product Name="Topin Secure Browser ($(var.Platform))" Manufacturer="Topin" Language="1033" Codepage="1252"
+             Id="*" Version="!(bind.fileVersion.MainExecutable)" UpgradeCode="B2C5F19A-7D3E-4A52-9B41-E8F74C6D2A9E">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
         <MediaTemplate EmbedCab="yes" />
         <UIRef Id="WixUI_Minimal" />
-        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes" />
+        <MajorUpgrade DowngradeErrorMessage="A newer version of Topin Secure Browser is already installed." AllowSameVersionUpgrades="yes" />
         <Icon Id="ApplicationIcon" SourceFile="Resources\Application.ico" />
         <Icon Id="ConfigurationToolIcon" SourceFile="Resources\ConfigurationTool.ico" />
         <Icon Id="ResetUtilityIcon" SourceFile="Resources\ResetUtility.ico" />
         <Property Id="ARPPRODUCTICON" Value="ApplicationIcon" />
-        <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="PLEASE NOTE: In order to run SEB, you first need to install all the required dependencies as specified under https://github.com/SafeExamBrowser/seb-win-refactoring#readme." />
+        <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Topin Secure Browser has been successfully installed. You can now launch it from the Start Menu." />
         <WixVariable Id="WixUILicenseRtf" Value="Resources\License.rtf" />
         <WixVariable Id="WixUIBannerBmp" Value="Resources\Banner.bmp" />
         <WixVariable Id="WixUIDialogBmp" Value="Resources\Dialog.bmp" />
-        <Feature Id="ProductFeature" Title="Safe Exam Browser" Level="1">
+        <Feature Id="ProductFeature" Title="Topin Secure Browser" Level="1">
             <ComponentGroupRef Id="ApplicationComponents" />
-            <ComponentGroupRef Id="ConfigurationComponents" />
-            <ComponentGroupRef Id="ResetComponents" />
+            <!-- ConfigurationComponents removed - not needed for students -->
+            <!-- ResetComponents removed - not needed for students -->
             <ComponentGroupRef Id="ServiceComponents" />
             <ComponentRef Id="ShortcutComponent" />
         </Feature>
