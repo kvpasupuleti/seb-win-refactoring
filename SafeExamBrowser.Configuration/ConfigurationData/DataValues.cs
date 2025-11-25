@@ -203,12 +203,12 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			settings.Browser.UseQueryParameter = false;
 			settings.Browser.UseTemporaryDownAndUploadDirectory = false;
 
-			settings.ConfigurationMode = ConfigurationMode.Exam;
+		settings.ConfigurationMode = ConfigurationMode.Exam;
 
-			settings.Display.AllowedDisplays = 1;
-			settings.Display.AlwaysOn = true;
-			settings.Display.IgnoreError = false;
-			settings.Display.InternalDisplayOnly = false;
+		settings.Display.AllowedDisplays = 10;
+		settings.Display.AlwaysOn = true;
+		settings.Display.IgnoreError = true;
+		settings.Display.InternalDisplayOnly = false;
 
 			settings.Keyboard.AllowAltEsc = false;
 			settings.Keyboard.AllowAltF4 = false;
@@ -254,17 +254,17 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			settings.Proctoring.ScreenProctoring.MetaData.CaptureWindowTitle = true;
 			settings.Proctoring.ShowTaskbarNotification = true;
 
-			settings.Security.AllowApplicationLogAccess = false;
-			settings.Security.AllowReconfiguration = false;
-			settings.Security.AllowStickyKeys = false;
-			settings.Security.AllowTermination = true;
-			settings.Security.AllowWindowCapture = false;
-			settings.Security.ClipboardPolicy = ClipboardPolicy.Isolated;
-			settings.Security.DisableSessionChangeLockScreen = false;
-			settings.Security.KioskMode = KioskMode.CreateNewDesktop;
-			settings.Security.VerifyCursorConfiguration = true;
-			settings.Security.VerifySessionIntegrity = true;
-			settings.Security.VirtualMachinePolicy = VirtualMachinePolicy.Deny;
+		settings.Security.AllowApplicationLogAccess = false;
+		settings.Security.AllowReconfiguration = false;
+		settings.Security.AllowStickyKeys = false;
+		settings.Security.AllowTermination = true;
+		settings.Security.AllowWindowCapture = false;
+		settings.Security.ClipboardPolicy = ClipboardPolicy.Isolated;
+		settings.Security.DisableSessionChangeLockScreen = false;
+		settings.Security.KioskMode = KioskMode.CreateNewDesktop;
+		settings.Security.VerifyCursorConfiguration = true;
+		settings.Security.VerifySessionIntegrity = true;
+		settings.Security.VirtualMachinePolicy = VirtualMachinePolicy.Allow;
 
 			settings.Server.Invigilation.ForceRaiseHandMessage = false;
 			settings.Server.Invigilation.ShowRaiseHandNotification = true;

@@ -1,4 +1,4 @@
-﻿//
+//
 //  SEBSettings.cs
 //  SafeExamBrowser
 //
@@ -997,10 +997,10 @@ namespace SebWindowsConfig
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyProxies, SEBSettings.proxiesDataDefault);
 
 			// Default settings for group "Security"
-			SEBSettings.settingsDefault.Add(SEBSettings.KeySebServicePolicy, 1);
-			SEBSettings.settingsDefault.Add(SEBSettings.KeySebServiceIgnore, true);
-			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowVirtualMachine, false);
-			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowScreenSharing, false);
+		SEBSettings.settingsDefault.Add(SEBSettings.KeySebServicePolicy, 1);
+		SEBSettings.settingsDefault.Add(SEBSettings.KeySebServiceIgnore, true);
+		SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowVirtualMachine, true);
+		SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowScreenSharing, false);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyEnablePrivateClipboard, true);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyCreateNewDesktop, true);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyKillExplorerShell, false);
@@ -1019,10 +1019,10 @@ namespace SebWindowsConfig
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowDictation, false);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyDetectStoppedProcess, true);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowDisplayMirroring, false);
-			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowedDisplaysMaxNumber, 1);
+			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowedDisplaysMaxNumber, 10);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowedDisplayBuiltin, true);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowedDisplayBuiltinEnforce, false);
-			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowedDisplayIgnoreFailure, false);
+			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowedDisplayIgnoreFailure, true);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowChromeNotifications, false);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyAllowWindowsUpdate, false);
 			SEBSettings.settingsDefault.Add(SEBSettings.KeyClipboardPolicy, 2);
