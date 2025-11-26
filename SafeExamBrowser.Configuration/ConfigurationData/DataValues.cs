@@ -197,7 +197,7 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			settings.Browser.SendBrowserExamKey = false;
 			settings.Browser.SendConfigurationKey = false;
 			settings.Browser.ShowFileSystemElementPath = true;
-			settings.Browser.StartUrl = "https://www.safeexambrowser.org/start";
+			settings.Browser.StartUrl = "https://www.topin.tech";
 			settings.Browser.UseCustomUserAgent = false;
 			settings.Browser.UseIsolatedClipboard = true;
 			settings.Browser.UseQueryParameter = false;

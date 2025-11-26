@@ -15,13 +15,18 @@ namespace TopinSecureBrowser.Launcher
                 // Get the directory where TSB.exe is located
                 string launcherDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
                 
-                // Look for TopinSecureBrowser.exe in the same directory
-                string sebExecutable = Path.Combine(launcherDir, "TopinSecureBrowser.exe");
+                // Try to find TopinSecureBrowser.exe in multiple locations
+                string sebExecutable = FindTopinSecureBrowserExecutable(launcherDir);
                 
-                if (!File.Exists(sebExecutable))
+                if (sebExecutable == null)
                 {
                     MessageBox.Show(
-                        "Topin Secure Browser executable not found.\n\nPlease ensure TopinSecureBrowser.exe is in the same directory as TSB.exe.",
+                        "Topin Secure Browser executable not found.\n\n" +
+                        "Searched locations:\n" +
+                        "1. Same directory as TSB.exe\n" +
+                        "2. ../Application/ (installer layout)\n" +
+                        "3. SafeExamBrowser.Runtime\\bin\\x64\\Release\\ (dev build)\n\n" +
+                        "Please ensure TopinSecureBrowser.exe is properly installed.",
                         "Topin Secure Browser - Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -44,13 +49,16 @@ namespace TopinSecureBrowser.Launcher
                     sebArgs = $"\"{configPath}\"";
                 }
 
+                // Set working directory to where TopinSecureBrowser.exe is located
+                string workingDir = Path.GetDirectoryName(sebExecutable);
+
                 // Launch the Topin Secure Browser
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
                     FileName = sebExecutable,
                     Arguments = sebArgs,
                     UseShellExecute = false,
-                    WorkingDirectory = launcherDir
+                    WorkingDirectory = workingDir
                 };
 
                 Process.Start(startInfo);
@@ -63,6 +71,49 @@ namespace TopinSecureBrowser.Launcher
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Searches for TopinSecureBrowser.exe in multiple locations
+        /// </summary>
+        private static string FindTopinSecureBrowserExecutable(string launcherDir)
+        {
+            // List of paths to search (in order of priority)
+            string[] searchPaths = new[]
+            {
+                // 1. Same directory as TSB.exe (portable installation)
+                Path.Combine(launcherDir, "TopinSecureBrowser.exe"),
+                
+                // 2. ../Application/ directory (standard installer layout)
+                Path.Combine(launcherDir, "..", "Application", "TopinSecureBrowser.exe"),
+                
+                // 3. Parent directory (alternative layout)
+                Path.Combine(launcherDir, "..", "TopinSecureBrowser.exe"),
+                
+                // 4. Development build location (relative to launcher output)
+                Path.Combine(launcherDir, "..", "..", "..", "..", "SafeExamBrowser.Runtime", "bin", "x64", "Release", "TopinSecureBrowser.exe"),
+                
+                // 5. Common installation directory
+                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "TopinSecureBrowser", "Application", "TopinSecureBrowser.exe")
+            };
+
+            foreach (string path in searchPaths)
+            {
+                try
+                {
+                    string fullPath = Path.GetFullPath(path);
+                    if (File.Exists(fullPath))
+                    {
+                        return fullPath;
+                    }
+                }
+                catch
+                {
+                    // Ignore invalid paths and continue searching
+                }
+            }
+
+            return null; // Not found
         }
 
         private static string CreateDefaultConfig(string directory)

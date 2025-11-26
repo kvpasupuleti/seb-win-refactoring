@@ -253,7 +253,15 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>IF EXIST "C:\SEB\seb_$(PlatformName).dll" (
+    <PostBuildEvent>REM Copy SafeExamBrowser.Client.exe to Runtime output directory
+ECHO Copying SafeExamBrowser.Client.exe to Runtime output directory...
+xcopy /Y "$(SolutionDir)SafeExamBrowser.Client\bin\$(PlatformName)\$(ConfigurationName)\SafeExamBrowser.Client.exe" "$(TargetDir)"
+IF %25ERRORLEVEL%25 NEQ 0 (
+    ECHO WARNING: Failed to copy SafeExamBrowser.Client.exe
+)
+
+REM Check for integrity module
+IF EXIST "C:\SEB\seb_$(PlatformName).dll" (
     robocopy "C:\SEB" "$(TargetDir)\" "seb_$(PlatformName).dll" /np
 
     IF %25ERRORLEVEL%25 GEQ 8 (
