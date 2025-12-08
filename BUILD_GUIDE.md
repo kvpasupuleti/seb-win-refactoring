@@ -26,6 +26,7 @@ $env:WIX = "C:\Program Files (x86)\WiX Toolset v3.14\"
 - ✅ Anti-rebranding restrictions bypassed (To avoid Black screen issue)
 - ✅ Code signing disabled (re-enable with your certificate)
 - ✅ x64 platform configured
+- ✅ Configuration and Reset tools removed from installer
 
 ## Code Signing (Optional)
 ```powershell
