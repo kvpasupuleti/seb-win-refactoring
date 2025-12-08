@@ -60,8 +60,8 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			appConfig.ClientExecutablePath = Path.Combine(Path.GetDirectoryName(executable.Location), $"{nameof(SafeExamBrowser)}.Client.exe");
 			appConfig.ClientLogFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Client.log");
 			appConfig.CodeSignatureHash = certificate?.GetCertHashString();
-			appConfig.ConfigurationFileExtension = ".seb";
-			appConfig.ConfigurationFileMimeType = "application/seb";
+			appConfig.ConfigurationFileExtension = ".tsb";
+			appConfig.ConfigurationFileMimeType = "application/tsb";
 			appConfig.ProgramBuildVersion = programBuild;
 			appConfig.ProgramCopyright = programCopyright;
 			appConfig.ProgramDataFilePath = Path.Combine(programDataFolder, DEFAULT_CONFIGURATION_NAME);
@@ -70,10 +70,10 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			appConfig.RuntimeId = Guid.NewGuid();
 			appConfig.RuntimeAddress = $"{AppConfig.BASE_ADDRESS}/runtime/{Guid.NewGuid()}";
 			appConfig.RuntimeLogFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Runtime.log");
-			appConfig.SebUriScheme = "seb";
-			appConfig.SebUriSchemeSecure = "sebs";
+			appConfig.SebUriScheme = "tsb";
+			appConfig.SebUriSchemeSecure = "tsbs";
 			appConfig.ServiceAddress = $"{AppConfig.BASE_ADDRESS}/service";
-			appConfig.ServiceEventName = $@"Global\{nameof(SafeExamBrowser)}-{Guid.NewGuid()}";
+			appConfig.ServiceEventName = $@"Global\TopinSecureBrowser-{Guid.NewGuid()}";
 			appConfig.ServiceLogFilePath = Path.Combine(logFolder, $"{logFilePrefix}_Service.log");
 			appConfig.SessionCacheFilePath = Path.Combine(temporaryFolder, "cache.bin");
 			appConfig.TemporaryDirectory = temporaryFolder;
@@ -197,7 +197,7 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 			settings.Browser.SendBrowserExamKey = false;
 			settings.Browser.SendConfigurationKey = false;
 			settings.Browser.ShowFileSystemElementPath = true;
-			settings.Browser.StartUrl = "https://www.safeexambrowser.org/start";
+			settings.Browser.StartUrl = "https://topin-assessment-portal-beta.earlywave.in/seb-acknowledgement";
 			settings.Browser.UseCustomUserAgent = false;
 			settings.Browser.UseIsolatedClipboard = true;
 			settings.Browser.UseQueryParameter = false;
@@ -205,7 +205,7 @@ namespace SafeExamBrowser.Configuration.ConfigurationData
 
 			settings.ConfigurationMode = ConfigurationMode.Exam;
 
-			settings.Display.AllowedDisplays = 1;
+			settings.Display.AllowedDisplays = 2;
 			settings.Display.AlwaysOn = true;
 			settings.Display.IgnoreError = false;
 			settings.Display.InternalDisplayOnly = false;

@@ -1,9 +1,11 @@
-# Safe Exam Browser - Custom Build Guide
+# Topin Secure Browser - Build Guide
 
 ## Prerequisites
 - Visual Studio 2022 with .NET Framework 4.8
 - WiX Toolset v3.14 installed
 - Windows 10/11 x64
+
+**Note**: The project requires .NET Framework 4.8 due to NuGet package dependencies. While older systems may have .NET 4.7.x, .NET 4.8 is widely available and provides better compatibility.
 
 ## Quick Build Commands
 

@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SEB Configuration Tool")]
-[assembly: AssemblyDescription("Safe Exam Browser")]
-[assembly: AssemblyCompany("ETH Zürich")]
-[assembly: AssemblyProduct("SEB Configuration Tool")]
-[assembly: AssemblyCopyright("Copyright © 2025 ETH Zürich, IT Services")]
+[assembly: AssemblyTitle("TSB Configuration Tool")]
+[assembly: AssemblyDescription("Topin Secure Browser")]
+[assembly: AssemblyCompany("NxtWave")]
+[assembly: AssemblyProduct("TSB Configuration Tool")]
+[assembly: AssemblyCopyright("Copyright © 2025 NxtWave")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

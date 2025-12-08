@@ -1,15 +1,15 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SafeExamBrowser.Service")]
-[assembly: AssemblyDescription("Safe Exam Browser")]
-[assembly: AssemblyCompany("ETH Zürich")]
-[assembly: AssemblyProduct("SafeExamBrowser.Service")]
-[assembly: AssemblyCopyright("Copyright © 2025 ETH Zürich, IT Services")]
+[assembly: AssemblyTitle("TopinSecureBrowser.Service")]
+[assembly: AssemblyDescription("Topin Secure Browser")]
+[assembly: AssemblyCompany("NxtWave")]
+[assembly: AssemblyProduct("TopinSecureBrowser.Service")]
+[assembly: AssemblyCopyright("Copyright � 2025 NxtWave")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

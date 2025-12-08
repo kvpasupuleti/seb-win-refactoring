@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Name="Safe Exam Browser ($(var.Platform))" Manufacturer="ETH Zürich" Language="1033" Codepage="1252"
-             Id="*" Version="!(bind.fileVersion.MainExecutable)" UpgradeCode="97A8B13E-48FB-4BE1-A7C2-DD1863F95CCB">
+    <Product Name="Topin Secure Browser ($(var.Platform))" Manufacturer="NxtWave" Language="1033" Codepage="1252"
+             Id="*" Version="!(bind.fileVersion.MainExecutable)" UpgradeCode="A1B2C3D4-E5F6-7890-ABCD-123456789DEF">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
         <MediaTemplate EmbedCab="yes" />
         <UIRef Id="WixUI_Minimal" />
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes" />
         <Icon Id="ApplicationIcon" SourceFile="Resources\Application.ico" />
         <Property Id="ARPPRODUCTICON" Value="ApplicationIcon" />
-        <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="PLEASE NOTE: In order to run SEB, you first need to install all the required dependencies as specified under https://github.com/SafeExamBrowser/seb-win-refactoring#readme." />
+        <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="PLEASE NOTE: In order to run Topin Secure Browser, you first need to install all the required dependencies as specified in the documentation." />
         <WixVariable Id="WixUILicenseRtf" Value="Resources\License.rtf" />
         <WixVariable Id="WixUIBannerBmp" Value="Resources\Banner.bmp" />
         <WixVariable Id="WixUIDialogBmp" Value="Resources\Dialog.bmp" />
-        <Feature Id="ProductFeature" Title="Safe Exam Browser" Level="1">
+        <Feature Id="ProductFeature" Title="Topin Secure Browser" Level="1">
             <ComponentGroupRef Id="ApplicationComponents" />
             <ComponentGroupRef Id="ServiceComponents" />
             <ComponentRef Id="ShortcutComponent" />
