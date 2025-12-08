@@ -80,14 +80,15 @@
 	</Target>
 	-->
   <PropertyGroup>
-    <SignOutput>true</SignOutput>
+    <SignOutput>false</SignOutput>
   </PropertyGroup>
-  <Target Name="SignBundleEngine">
+  <!-- Signing disabled for custom builds -->
+  <!--<Target Name="SignBundleEngine">
     <Exec Command="signtool sign /sha1 ecac9df025f5d208f6190fc4d6f9d329576598c7 /sm /tr http://timestamp.digicert.com /td sha256 /fd sha256 &quot;@(SignBundleEngine)&quot;" />
   </Target>
   <Target Name="SignBundle">
     <Exec Command="signtool sign /sha1 ecac9df025f5d208f6190fc4d6f9d329576598c7 /sm /tr http://timestamp.digicert.com /td sha256 /fd sha256 &quot;@(SignBundle)&quot;" />
-  </Target>
+  </Target>-->
   <PropertyGroup>
     <PreBuildEvent>IF NOT EXIST "C:\Temp" (
     mkdir "C:\Temp"

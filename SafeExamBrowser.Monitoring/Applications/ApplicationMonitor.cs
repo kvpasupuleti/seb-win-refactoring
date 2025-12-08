@@ -255,10 +255,8 @@ namespace SafeExamBrowser.Monitoring.Applications
 			isRuntime &= process.Name == "SafeExamBrowser.exe";
 			isRuntime &= process.OriginalName == "SafeExamBrowser.exe";
 
-#if !DEBUG
-			isClient &= process.Signature == "ecac9df025f5d208f6190fc4d6f9d329576598c7";
-			isRuntime &= process.Signature == "ecac9df025f5d208f6190fc4d6f9d329576598c7";
-#endif
+// Signature verification disabled for custom builds
+			// Official builds would check: process.Signature == "ecac9df025f5d208f6190fc4d6f9d329576598c7"
 
 			return isClient || isRuntime;
 		}
