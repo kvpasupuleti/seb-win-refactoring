@@ -9,7 +9,7 @@
 
 ## Quick Build Commands
 
-### 1. Build Release Application
+### 1. Build Release Application for x64 (Replace x64 with x86 for such platforms)
 ```powershell
 & "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" SafeExamBrowser.sln /p:Configuration=Release /p:Platform=x64
 ```
@@ -29,12 +29,13 @@ SetupBundle\SetupBundle.wixproj /p:Configuration=Release /p:Platform=x64 `
 
 ## Output Locations
 - **Application**: `SafeExamBrowser.Runtime\bin\x64\Release\SafeExamBrowser.exe`
-- **MSI Installer**: `Setup\bin\x64\Release\Setup.msi`
+- **MSI Installer**: `Setup\bin\x64\Release\TSB.msi`
+- **EXE Bundle**: `SetupBundle\bin\x64\Release\TSB.exe`
 
 ## Key Modifications Made
 - ✅ Anti-rebranding restrictions bypassed (To avoid Black screen issue)
 - ✅ Code signing disabled (re-enable with your certificate)
-- ✅ x64 platform configured
+- ✅ x64 and x86 platforms configured
 - ✅ Configuration and Reset tools removed from installer
 
 ## Code Signing (Optional)

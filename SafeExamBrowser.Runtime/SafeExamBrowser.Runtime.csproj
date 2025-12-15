@@ -263,6 +263,22 @@
     ECHO WARNING: Integrity module not included!
 )
 
+REM Copy DirectX shader compiler DLLs from x64 to x86 build if missing
+IF "$(PlatformName)"=="x86" (
+    IF NOT EXIST "$(TargetDir)dxcompiler.dll" (
+        IF EXIST "$(SolutionDir)SafeExamBrowser.Runtime\bin\x64\Release\dxcompiler.dll" (
+            copy "$(SolutionDir)SafeExamBrowser.Runtime\bin\x64\Release\dxcompiler.dll" "$(TargetDir)" >nul
+            ECHO INFO: Copied dxcompiler.dll from x64 build
+        )
+    )
+    IF NOT EXIST "$(TargetDir)dxil.dll" (
+        IF EXIST "$(SolutionDir)SafeExamBrowser.Runtime\bin\x64\Release\dxil.dll" (
+            copy "$(SolutionDir)SafeExamBrowser.Runtime\bin\x64\Release\dxil.dll" "$(TargetDir)" >nul
+            ECHO INFO: Copied dxil.dll from x64 build
+        )
+    )
+)
+
 EXIT 0</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>

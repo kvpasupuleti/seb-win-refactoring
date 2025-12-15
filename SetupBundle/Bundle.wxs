@@ -20,15 +20,15 @@
                         Compressed="yes"
                         DisplayInternalUI="no"
                         SourceFile="$(var.Setup.ProjectDir)bin\x64\Release\$(var.Setup.TargetFileName)"
+                        InstallCondition="VersionNT64"
                         Vital="yes" />
-            <!-- x86 MSI package commented out due to missing DLLs (dxcompiler.dll, dxil.dll) in x86 build
             <MsiPackage Id="SetupX86"
                         Compressed="yes"
                         DisplayInternalUI="no"
                         InstallCondition="NOT VersionNT64"
                         SourceFile="$(var.Setup.ProjectDir)bin\x86\Release\$(var.Setup.TargetFileName)"
                         Vital="yes" />
-            -->
+           
         </Chain>
     </Bundle>
 </Wix>
