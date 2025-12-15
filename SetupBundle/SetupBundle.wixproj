@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>95b68cbf-c483-4824-bb39-663e840519a0</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>SetupBundle</OutputName>
+    <OutputName>TSB</OutputName>
     <OutputType>Bundle</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">

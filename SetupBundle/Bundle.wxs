@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
-    <Bundle Name="Safe Exam Browser"
+    <Bundle Name="Topin Secure Browser"
             IconSourceFile="$(var.Setup.ProjectDir)Resources\Application.ico"
-            Manufacturer="!(bind.packageManufacturer.SetupX86)"
-            UpgradeCode="26C1045A-99CC-4479-987B-376390379441"
-            Version="!(bind.packageVersion.SetupX86)">
+            Manufacturer="!(bind.packageManufacturer.SetupX64)"
+            UpgradeCode="26C1045A-99CC-4479-987B-376390379442"
+            Version="!(bind.packageVersion.SetupX64)">
         <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLargeLicense">
             <bal:WixStandardBootstrapperApplication LicenseFile="$(var.Setup.ProjectDir)Resources\License.rtf"
                                                     LocalizationFile="Resources\Theme.wxl"
@@ -19,15 +19,16 @@
             <MsiPackage Id="SetupX64"
                         Compressed="yes"
                         DisplayInternalUI="no"
-                        InstallCondition="VersionNT64"
                         SourceFile="$(var.Setup.ProjectDir)bin\x64\Release\$(var.Setup.TargetFileName)"
                         Vital="yes" />
+            <!-- x86 MSI package commented out due to missing DLLs (dxcompiler.dll, dxil.dll) in x86 build
             <MsiPackage Id="SetupX86"
                         Compressed="yes"
                         DisplayInternalUI="no"
                         InstallCondition="NOT VersionNT64"
                         SourceFile="$(var.Setup.ProjectDir)bin\x86\Release\$(var.Setup.TargetFileName)"
                         Vital="yes" />
+            -->
         </Chain>
     </Bundle>
 </Wix>
